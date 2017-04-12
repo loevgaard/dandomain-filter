@@ -1,0 +1,21 @@
+{
+  "name": "dandomain-filter",
+  "homepage": "https://github.com/loevgaard/dandomain-filter",
+  "authors": [
+    "Joachim Løvgaard <joachim@loevgaard.dk>"
+  ],
+  "description": "Very small javascript library for handling 'events' in the Dandomain filter",
+  "main": "",
+  "keywords": [
+    "dandomain",
+    "filter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
