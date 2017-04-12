@@ -20,9 +20,18 @@
         obj.events.filteredListLoaded               = 'filteredListLoaded';
 
         for(var event in obj.events) {
-            window[event] = function () {
-                callQueue(event);
-            };
+            (function(e) {
+                window[e] = function () {
+                    console.log(e);
+                    if(!queue.hasOwnProperty(e)) {
+                        return;
+                    }
+
+                    queue[e].forEach(function (fn) {
+                        fn.apply();
+                    });
+                };
+            })(event);
         }
 
         /**
@@ -53,16 +62,6 @@
 
 
         return obj;
-    }
-
-    function callQueue(event) {
-        if(!queue.hasOwnProperty(event)) {
-            return;
-        }
-
-        queue[event].forEach(function (fn) {
-            fn.apply();
-        });
     }
 
     if(typeof(window.dandomainFilter) === 'undefined'){
