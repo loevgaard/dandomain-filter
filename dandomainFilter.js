@@ -22,7 +22,6 @@
         for(var event in obj.events) {
             (function(e) {
                 window[e] = function () {
-                    console.log(e);
                     if(!queue.hasOwnProperty(e)) {
                         return;
                     }
